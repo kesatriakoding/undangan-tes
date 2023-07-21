@@ -1,0 +1,13 @@
+::root {
+    --tx: #F8BF13;
+    --bg: #120E01;
+    --ct: #FDF1CC;
+    --hd: 'Sacramento', cursive;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    background-color: var(--bg);
+    text-align: center;
+}
