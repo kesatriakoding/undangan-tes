@@ -1,13 +1,94 @@
-::root {
-    --tx: #F8BF13;
-    --bg: #120E01;
-    --ct: #FDF1CC;
-    --hd: 'Sacramento', cursive;
+:root {
+  --sm: "Sacramento", cursive;
+  --tx: #f8bf13;
+  --bg: #120e01;
+  --ct: #fdf1cc;
+  --shadow: 0 2px 2px rgb(250 243 240 / 0.5);
+  /* 0='x offset' 2px='y offset' 2px='blur' 0.5='nilai alpha' */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    background-color: var(--bg);
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  min-height: 2000px;
+
+  /* Pengaturan css kepada seluruh element body */
+}
+
+/* section hero */
+
+/* sudo element "::"dan":" harus memuat element content didalam pengaturannya walau kosong */
+.hero ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/teroris.jpeg);
+  z-index: -1;
+  filter: drop-shadow();
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  /* color: var(--tx); */
+  /* <.> tanda titik mengatur element class */
+  /* <#> tanda pagar mengatur element id */
+}
+
+.hero h1 {
+  font-family: "sacramento", cursive;
+  color: var(--tx);
+  text-shadow: var(--shadow);
+}
+
+.hero a {
+  color: var(--tx);
+  background-color: var(--ct);
+  margin-top: 2rem;
+  /* pengaturan kota di bootstrap btn-lg di html */
+}
+
+.hero a:hover {
+  background-color: var(--tx);
+  color: var(--bg);
+}
+
+/* simplyCountdown */
+/* .hero .simply-coundown {
+    justify-content: center;
+} */
+
+/* Media Query */
+
+/* Laptop */
+@media (max-widht: 992px){
+    html {
+        font-size: 75%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 40px;
+    }
+}
+/* Tablet */
+@media (max-widht: 768px){
+    html {
+        font-size: 60%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 30px;
+        margin: 7px;
+    }
+}
+/* Mobile Phone */
+@media (max-widht: 576px){
+    html {
+        font-size: 50%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 20px;
+        margin: 3px;
+    }
 }
